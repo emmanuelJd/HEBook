@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application xmlns="http://wadl.dev.java.net/2009/02">
+    <doc xmlns:jersey="http://jersey.java.net/" jersey:generatedBy="Jersey: 1.11.1 03/31/2012 06:49 PM"/>
+    <grammars>
+        <include href="application.wadl/xsd0.xsd">
+            <doc title="Generated" xml:lang="en"/>
+        </include>
+    </grammars>
+    <resources base="http://localhost:8080/HEBookProjet/webresources/">
+        <resource path="org.hebook.model.reservation">
+            <method id="create" name="POST">
+                <request>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="reservation" mediaType="application/xml"/>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="reservation" mediaType="application/json"/>
+                </request>
+            </method>
+            <method id="findAll" name="GET">
+                <response>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="reservation" mediaType="application/xml"/>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="reservation" mediaType="application/json"/>
+                </response>
+            </method>
+            <method id="edit" name="PUT">
+                <request>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="reservation" mediaType="application/xml"/>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="reservation" mediaType="application/json"/>
+                </request>
+            </method>
+            <resource path="{id}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="id" style="template" type="xs:long"/>
+                <method id="remove" name="DELETE"/>
+                <method id="find" name="GET">
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="reservation" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="reservation" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="count">
+                <method id="countREST" name="GET">
+                    <response>
+                        <representation mediaType="text/plain"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="{from}/{to}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="to" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="from" style="template" type="xs:int"/>
+                <method id="findRange" name="GET">
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="reservation" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="reservation" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="createSecure">
+                <method id="createSecure" name="POST">
+                    <request>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="reservationResult" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="reservationResult" mediaType="application/json"/>
+                    </request>
+                    <response>
+                        <representation mediaType="*/*"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="getVerifCard">
+                <method id="getVerifCard" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="typeCarte" style="query" type="xs:int"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="numero" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/xml"/>
+                        <representation mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="getReservationByClient">
+                <method id="reservationByClient" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="idClient" style="query" type="xs:long"/>
+                    </request>
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="reservationResult" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="reservationResult" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="getListReservationByClient">
+                <method id="listReservationByClient" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="idClient" style="query" type="xs:long"/>
+                    </request>
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="recapReservationByClient" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="recapReservationByClient" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="org.hebook.model.chambre">
+            <method id="create" name="POST">
+                <request>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="chambre" mediaType="application/xml"/>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="chambre" mediaType="application/json"/>
+                </request>
+            </method>
+            <method id="findAll" name="GET">
+                <response>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="chambre" mediaType="application/xml"/>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="chambre" mediaType="application/json"/>
+                </response>
+            </method>
+            <method id="edit" name="PUT">
+                <request>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="chambre" mediaType="application/xml"/>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="chambre" mediaType="application/json"/>
+                </request>
+            </method>
+            <resource path="{id}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="id" style="template" type="xs:long"/>
+                <method id="remove" name="DELETE"/>
+                <method id="find" name="GET">
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="chambreResult" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="chambreResult" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="count">
+                <method id="countREST" name="GET">
+                    <response>
+                        <representation mediaType="text/plain"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="{from}/{to}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="to" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="from" style="template" type="xs:int"/>
+                <method id="findRange" name="GET">
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="chambre" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="chambre" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="getChambreByHotel">
+                <method id="findChambreByHotel" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="idHotel" style="query" type="xs:long"/>
+                    </request>
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="chambreResult" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="chambreResult" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="org.hebook.model.excursion">
+            <method id="create" name="POST">
+                <request>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="excursion" mediaType="application/xml"/>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="excursion" mediaType="application/json"/>
+                </request>
+            </method>
+            <method id="findAll" name="GET">
+                <response>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="excursion" mediaType="application/xml"/>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="excursion" mediaType="application/json"/>
+                </response>
+            </method>
+            <method id="edit" name="PUT">
+                <request>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="excursion" mediaType="application/xml"/>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="excursion" mediaType="application/json"/>
+                </request>
+            </method>
+            <resource path="{id}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="id" style="template" type="xs:long"/>
+                <method id="remove" name="DELETE"/>
+                <method id="find" name="GET">
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="excursion" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="excursion" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="count">
+                <method id="countREST" name="GET">
+                    <response>
+                        <representation mediaType="text/plain"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="{from}/{to}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="to" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="from" style="template" type="xs:int"/>
+                <method id="findRange" name="GET">
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="excursion" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="excursion" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="createSecure">
+                <method id="createSecure" name="POST">
+                    <request>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="excursionResult" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="excursionResult" mediaType="application/json"/>
+                    </request>
+                </method>
+            </resource>
+            <resource path="getExcursionByNbrePlaceDisponible">
+                <method id="getExcursionByNbrePlaceDisponible" name="GET">
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="excursionByPlaceDisponible" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="excursionByPlaceDisponible" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="getExcursion">
+                <method id="findAllByFilter" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="idHotel" style="query" type="xs:long" default="-1"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="dateDebut" style="query" type="xs:long" default="-1"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="dateFin" style="query" type="xs:long" default="-1"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="prixSup" style="query" type="xs:double" default="-1"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="prixInf" style="query" type="xs:double" default="-1"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="prix" style="query" type="xs:double" default="-1"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="theme" style="query" type="xs:string" default="null"/>
+                    </request>
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="excursionResult" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="excursionResult" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="addReservationSecure">
+                <method id="addReservationSecure" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="idExcursion" style="query" type="xs:long" default="-1"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="idReservation" style="query" type="xs:long" default="-1"/>
+                    </request>
+                </method>
+            </resource>
+            <resource path="getExcursionByClient">
+                <method id="getExcursionByClient" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="idClient" style="query" type="xs:long"/>
+                    </request>
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="excursionResult" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="excursionResult" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="getMostReservExcursion">
+                <method id="getMostReservExcursion" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="dateDebut" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="dateFin" style="query" type="xs:long"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="nombreVisiteur" style="query" type="xs:int" default="0"/>
+                    </request>
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="excursionPopulaire" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="excursionPopulaire" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="org.hebook.model.client">
+            <method id="create" name="POST">
+                <request>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="client" mediaType="application/xml"/>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="client" mediaType="application/json"/>
+                </request>
+            </method>
+            <method id="findAll" name="GET">
+                <response>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="client" mediaType="application/xml"/>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="client" mediaType="application/json"/>
+                </response>
+            </method>
+            <method id="edit" name="PUT">
+                <request>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="client" mediaType="application/xml"/>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="client" mediaType="application/json"/>
+                </request>
+            </method>
+            <resource path="{id}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="id" style="template" type="xs:long"/>
+                <method id="remove" name="DELETE"/>
+                <method id="find" name="GET">
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="clientResult" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="clientResult" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="count">
+                <method id="countREST" name="GET">
+                    <response>
+                        <representation mediaType="text/plain"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="{from}/{to}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="to" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="from" style="template" type="xs:int"/>
+                <method id="findRange" name="GET">
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="client" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="client" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="createSecure">
+                <method id="createSecure" name="POST">
+                    <request>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="client" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="client" mediaType="application/json"/>
+                    </request>
+                    <response>
+                        <representation mediaType="*/*"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/findAllWithoutLoop">
+                <method id="findAllWithoutLoop" name="GET">
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="clientResult" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="clientResult" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="connectionClient">
+                <method id="connectionClient" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="nom" style="query" type="xs:string" default="null"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="prenom" style="query" type="xs:string" default="null"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="numCarte" style="query" type="xs:string" default="null"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/xml"/>
+                        <representation mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="org.hebook.model.hotel">
+            <method id="create" name="POST">
+                <request>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="hotel" mediaType="application/xml"/>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="hotel" mediaType="application/json"/>
+                </request>
+            </method>
+            <method id="findAll" name="GET">
+                <response>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="hotel" mediaType="application/xml"/>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="hotel" mediaType="application/json"/>
+                </response>
+            </method>
+            <method id="edit" name="PUT">
+                <request>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="hotel" mediaType="application/xml"/>
+                    <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="hotel" mediaType="application/json"/>
+                </request>
+            </method>
+            <resource path="{id}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="id" style="template" type="xs:long"/>
+                <method id="remove" name="DELETE"/>
+                <method id="find" name="GET">
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="hotel" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="hotel" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="count">
+                <method id="countREST" name="GET">
+                    <response>
+                        <representation mediaType="text/plain"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="{from}/{to}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="to" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="from" style="template" type="xs:int"/>
+                <method id="findRange" name="GET">
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="hotel" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="hotel" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="getHotelAndChambreCountDisponible">
+                <method id="findHotelAndChambreCountDisponible" name="GET">
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="chambrePerHotel" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="chambrePerHotel" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="getHotel">
+                <method id="findAllByFilter" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ville" style="query" type="xs:string" default="null"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="nombreEtoile" style="query" type="xs:int" default="-1"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="prixSup" style="query" type="xs:double" default="-1"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="prixInf" style="query" type="xs:double" default="-1"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="prix" style="query" type="xs:double" default="-1"/>
+                    </request>
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="hotelResult" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="hotelResult" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="getHotelByDisponibilite">
+                <method id="findAllByDisponibilite" name="GET">
+                    <response>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="hotelResult" mediaType="application/xml"/>
+                        <ns2:representation xmlns:ns2="http://wadl.dev.java.net/2009/02" xmlns="" element="hotelResult" mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+    </resources>
+</application>
